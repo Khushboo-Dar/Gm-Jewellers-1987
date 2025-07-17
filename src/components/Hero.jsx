@@ -1,4 +1,11 @@
 const Hero = () => {
+  const handleScroll = () => {
+    const section = document.getElementById("collections");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="home" className="relative bg-gradient-to-r from-gray-50 to-gray-100 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,18 +18,18 @@ const Hero = () => {
             Discover timeless elegance with our handcrafted jewellery collection. 
             From traditional designs to contemporary pieces, find the perfect jewellery for every occasion.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary text-secondary px-8 py-3 rounded-lg hover:bg-secondary hover:text-primary hover:border hover:border-primary transition-colors duration-300">
+          <div className="flex justify-center">
+            <button
+              onClick={handleScroll}
+              className="bg-primary text-secondary px-8 py-3 rounded-lg hover:bg-secondary hover:text-primary hover:border hover:border-primary transition-colors duration-300"
+            >
               View Collections
-            </button>
-            <button className="bg-secondary text-primary border border-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-secondary transition-colors duration-300">
-              Custom Design
             </button>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
